@@ -17,9 +17,6 @@ app.config['UPLOAD_FOLDER'] = os.path.join('static', 'files')
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-# pytesseract.pytesseract.tesseract_cmd = r'/opt/homebrew/bin/tesseract'
-pytesseract.pytesseract.tesseract_cmd = os.path.join(os.getcwd(), 'static', 'tesseract', 'tesseract')
-
 @app.route("/", methods=['GET', 'POST'])
 def index():
     """Home Page"""
