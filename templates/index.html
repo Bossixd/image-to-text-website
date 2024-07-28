@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div>
+        <p>Upload your image file below and press Upload to convert your image to text!</p>
+        <div>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <div>
+                    <input type=file name=file style="width: 213px;">
+                </div>
+                <div>
+                    <input type=submit value=Upload>
+                </div>
+            </form>
+        </div>
+        {% if output %}
+        <div>
+            <h3>Output:</h3>
+            <p>{{ output }}</p>
+        </div>
+        {% endif %}
+        {% if img_path %}
+        <div>
+            <h3>Image Chosen:</h3>
+            <img src="{{ img_path }}" alt="Italian Trulli" style="max-width: 100%; height: auto; width: auto\9;">
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
